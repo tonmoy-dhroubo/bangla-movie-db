@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ApiService {
     base: string = 'https://api.themoviedb.org/3/';
-    key: string = '11b03d27bb82e4a75fced23d9cb7c53b';
-    youtubeKey: string = 'AIzaSyCkr4S_cUAfRaM7iF7o6ZnD9m0LhaDWtFg';
     genreCodes = new Map<string, number>([
         ['Action', 28],
         ['Adventure', 12],
@@ -43,18 +42,18 @@ export class ApiService {
 
     getMovieDetails(id: string): Observable<any> {
         return this.http.get(
-            this.base + `movie/` + id + `?api_key=` + this.key,
+            this.base + `movie/` + id + `?api_key=` + environment.theMovieDBKey,
         );
     }
 
     getGenreMovies(genre: string): Observable<any> {
-        // return this.http.get(this.base + `discover/movie?api_key=` + this.key + `&with_genres=` + this.genres[genre as keyof typeof this.genres]);
+        // return this.http.get(this.base + `discover/movie?api_key=` + environment.theMovieDBKey + `&with_genres=` + this.genres[genre as keyof typeof this.genres]);
         return this.http.get(
             this.base +
                 `discover/movie?page=1&sort_by=popularity.desc&with_genres=` +
                 genre +
                 `&with_original_language=bn&api_key=` +
-                this.key,
+                environment.theMovieDBKey,
         );
     }
 
@@ -64,16 +63,16 @@ export class ApiService {
                 `search/movie?query=` +
                 query +
                 `&page=1&api_key=` +
-                this.key,
+                environment.theMovieDBKey,
         );
     }
 
     getDiscover(): Observable<any> {
-        // return this.http.get(this.base + `discover/movie?api_key=` + this.key + `&with_genres=` + this.genres[genre as keyof typeof this.genres]);
+        // return this.http.get(this.base + `discover/movie?api_key=` + environment.theMovieDBKey + `&with_genres=` + this.genres[genre as keyof typeof this.genres]);
         return this.http.get(
             this.base +
                 `discover/movie?page=1&sort_by=popularity.desc&with_original_language=bn&api_key=` +
-                this.key,
+                environment.theMovieDBKey,
         );
     }
 
@@ -81,7 +80,7 @@ export class ApiService {
         return this.http.get(
             `https://youtube.googleapis.com/youtube/v3/search?q=${
                 title + ' trailer'
-            }&key=${this.youtubeKey}`,
+            }&key=${environment.googleKey}`,
         );
     }
 }

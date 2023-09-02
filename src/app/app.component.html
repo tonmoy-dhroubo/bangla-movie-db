@@ -1,83 +1,113 @@
-
-<section id="navbar" class="relative flex flex-col ">
-  <nav class="flex items-center justify-between w-full p-5 text-white bg-blue-500/10">
-    <!-- Title/Logo -->
-    <div class="text-5xl font-cursive">Movie</div>
-    <!-- Medium Screen Menu -->
-    <div class="items-center hidden space-x-6 text-md md:flex">
-
-      <div class="text-2xl">
-        <a routerLink="/home">Home</a>
-      </div >
-      <div class="text-2xl">
-        <a routerLink="/search">About</a>
-      </div>
-      <div class="text-2xl">
-        <a routerLink="/">Contact</a>
-      </div>
-      <!-- Search  -->
-      <div>
-        <div class="flex items-center justify-center space-x-3">
-          <input type="text" class="h-4 p-4 text-black rounded-xl w-60 focus:outline-none" placeholder="Search">
-          <a routerLink="">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 64 64" style="fill:#FFFFFF;">
-              <path d="M 24 2.8886719 C 12.365714 2.8886719 2.8886719 12.365723 2.8886719 24 C 2.8886719 35.634277 12.365714 45.111328 24 45.111328 C 29.036552 45.111328 33.664698 43.331333 37.298828 40.373047 L 52.130859 58.953125 C 52.130859 58.953125 55.379484 59.435984 57.396484 57.333984 C 59.427484 55.215984 58.951172 52.134766 58.951172 52.134766 L 40.373047 37.298828 C 43.331332 33.664697 45.111328 29.036548 45.111328 24 C 45.111328 12.365723 35.634286 2.8886719 24 2.8886719 z M 24 7.1113281 C 33.352549 7.1113281 40.888672 14.647457 40.888672 24 C 40.888672 33.352543 33.352549 40.888672 24 40.888672 C 14.647451 40.888672 7.1113281 33.352543 7.1113281 24 C 7.1113281 14.647457 14.647451 7.1113281 24 7.1113281 z">
-              </path>
-            </svg>
-          </a>
+<section id="navbar" class="relative flex flex-col">
+    <nav
+        class="flex items-center justify-between w-full p-5 text-white bg-blue-500/10"
+    >
+        <!-- Title/Logo -->
+        <div class="text-5xl font-cursive">Movie</div>
+        <!-- Medium Screen Menu -->
+        <div class="items-center hidden space-x-6 text-md md:flex">
+            <div class="text-2xl">
+                <a routerLink="/home">Home</a>
+            </div>
+            <div class="text-2xl">
+                <a routerLink="/search">About</a>
+            </div>
+            <div class="text-2xl">
+                <a routerLink="/">Contact</a>
+            </div>
+            <!-- Search  -->
+            <div>
+                <div class="flex items-center justify-center space-x-3">
+                    <input
+                        type="text"
+                        class="h-4 p-4 text-black rounded-xl w-60 focus:outline-none"
+                        placeholder="Search"
+                    />
+                    <a routerLink="">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 64 64"
+                            style="fill: #ffffff"
+                        >
+                            <path
+                                d="M 24 2.8886719 C 12.365714 2.8886719 2.8886719 12.365723 2.8886719 24 C 2.8886719 35.634277 12.365714 45.111328 24 45.111328 C 29.036552 45.111328 33.664698 43.331333 37.298828 40.373047 L 52.130859 58.953125 C 52.130859 58.953125 55.379484 59.435984 57.396484 57.333984 C 59.427484 55.215984 58.951172 52.134766 58.951172 52.134766 L 40.373047 37.298828 C 43.331332 33.664697 45.111328 29.036548 45.111328 24 C 45.111328 12.365723 35.634286 2.8886719 24 2.8886719 z M 24 7.1113281 C 33.352549 7.1113281 40.888672 14.647457 40.888672 24 C 40.888672 33.352543 33.352549 40.888672 24 40.888672 C 14.647451 40.888672 7.1113281 33.352543 7.1113281 24 C 7.1113281 14.647457 14.647451 7.1113281 24 7.1113281 z"
+                            ></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
+        <!--Hamburger Menu -->
+        <div class="md:hidden">
+            <button
+                id="menu-btn"
+                type="button"
+                class="z-40 block hamburger focus:outline-none md:hidden"
+                [ngClass]="{ open: hamburger }"
+                (click)="hamburger = !hamburger"
+            >
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- Mobile Menu Overlay -->
+    <div
+        id="menu"
+        class="absolute top-0 left-0 right-0 z-30 min-h-screen bg-slate-900 bg-opacity-80 pt-36"
+        [ngClass]="{ hidden: !hamburger }"
+    >
+        <!-- Mobile Menus -->
+        <div
+            class="flex flex-col items-center justify-center p-6 space-y-8 text-3xl text-white font-menu"
+        >
+            <div>
+                <a routerLink="/">Home</a>
+            </div>
+            <div>
+                <a routerLink="/movies">About</a>
+            </div>
+            <div>
+                <a routerLink="/movies">Contact</a>
+            </div>
+            <!-- Search  -->
+            <div class="flex items-center justify-center space-x-3">
+                <input
+                    type="text"
+                    class="h-10 p-6 text-black rounded-xl w-60"
+                    placeholder="Search"
+                />
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 64 64"
+                    style="fill: #ffffff"
+                >
+                    <path
+                        d="M 24 2.8886719 C 12.365714 2.8886719 2.8886719 12.365723 2.8886719 24 C 2.8886719 35.634277 12.365714 45.111328 24 45.111328 C 29.036552 45.111328 33.664698 43.331333 37.298828 40.373047 L 52.130859 58.953125 C 52.130859 58.953125 55.379484 59.435984 57.396484 57.333984 C 59.427484 55.215984 58.951172 52.134766 58.951172 52.134766 L 40.373047 37.298828 C 43.331332 33.664697 45.111328 29.036548 45.111328 24 C 45.111328 12.365723 35.634286 2.8886719 24 2.8886719 z M 24 7.1113281 C 33.352549 7.1113281 40.888672 14.647457 40.888672 24 C 40.888672 33.352543 33.352549 40.888672 24 40.888672 C 14.647451 40.888672 7.1113281 33.352543 7.1113281 24 C 7.1113281 14.647457 14.647451 7.1113281 24 7.1113281 z"
+                    ></path>
+                </svg>
+            </div>
+        </div>
     </div>
-    <!--Hamburger Menu -->
-    <div class="md:hidden">
-      <button
-        id="menu-btn"
-        type="button"
-        class="z-40 block hamburger focus:outline-none md:hidden"
-        [ngClass]="{'open': hamburger}"
-        (click)="hamburger = !hamburger"
-      >
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
-      </button>
-    </div>
-  </nav>
-  <!-- Mobile Menu Overlay -->
-  <div
-    id="menu"
-    class="absolute top-0 left-0 right-0 z-30 min-h-screen bg-slate-900 bg-opacity-80 pt-36"
-    [ngClass]="{'hidden': !hamburger}"
-  >
-    <!-- Mobile Menus -->
-    <div class="flex flex-col items-center justify-center p-6 space-y-8 text-3xl text-white font-menu">
-      <div>
-        <a routerLink="/">Home</a>
-      </div>
-      <div>
-        <a routerLink="/movies">About</a>
-      </div>
-      <div>
-        <a routerLink="/movies">Contact</a>
-      </div>
-      <!-- Search  -->
-      <div class="flex items-center justify-center space-x-3">
-        <input type="text" class="h-10 p-6 text-black rounded-xl w-60" placeholder="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 64 64" style="fill:#FFFFFF;">
-          <path d="M 24 2.8886719 C 12.365714 2.8886719 2.8886719 12.365723 2.8886719 24 C 2.8886719 35.634277 12.365714 45.111328 24 45.111328 C 29.036552 45.111328 33.664698 43.331333 37.298828 40.373047 L 52.130859 58.953125 C 52.130859 58.953125 55.379484 59.435984 57.396484 57.333984 C 59.427484 55.215984 58.951172 52.134766 58.951172 52.134766 L 40.373047 37.298828 C 43.331332 33.664697 45.111328 29.036548 45.111328 24 C 45.111328 12.365723 35.634286 2.8886719 24 2.8886719 z M 24 7.1113281 C 33.352549 7.1113281 40.888672 14.647457 40.888672 24 C 40.888672 33.352543 33.352549 40.888672 24 40.888672 C 14.647451 40.888672 7.1113281 33.352543 7.1113281 24 C 7.1113281 14.647457 14.647451 7.1113281 24 7.1113281 z"></path>
-        </svg>
-      </div>
-    </div>
-  </div>
 </section>
 
 <router-outlet></router-outlet>
 
-
 <footer>
-    <div class="flex flex-col items-center justify-center w-full text-white bg-blue-500/10 mt-24 space-y-4 p-12">
+    <div
+        class="flex flex-col items-center justify-center w-full text-white bg-blue-500/10 mt-24 space-y-4 p-12"
+    >
         <div class="text-2xl font-cursive">Movie</div>
         <div class="text-sm">© 2023 Movie, Inc. All rights reserved.</div>
-      <div class="text-sm">Designed By Tonmoy Ahmed Dhroubo.</div>
+        <div class="text-sm">Designed By Tonmoy Ahmed Dhroubo.</div>
     </div>
 </footer>
