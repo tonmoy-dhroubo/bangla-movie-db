@@ -1,0 +1,77 @@
+<div>
+    <!--Banner Carousel-->
+    <div
+        class="max-w-[1500px] md:h-[600px] h-96 md:w-full mx-auto my-2 relative flex group"
+    >
+        <div
+            routerLink="/details/{{ bannerLinks[bannerIndex].id }}"
+            [ngStyle]="{
+                backgroundImage:
+                    'url(' +
+                    api.generateImg(bannerLinks[bannerIndex].backdrop_path) +
+                    ')'
+            }"
+            class="aspect-w-16 aspect-h-9 md:w-full w-[480px] h-full relative bg-center md:bg-cover duration-500 justify-center flex bg-no-repeat cursor-pointer"
+        >
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent"
+            ></div>
+            <div
+                class="text-white font-bangla absolute bottom-5 md:text-6xl text-xl rounded duration"
+            >
+                {{ bannerLinks[bannerIndex].original_title }}
+            </div>
+        </div>
+
+        <div
+            (click)="bannerPrevious()"
+            class="h-full w-20 group-hover:bg-black/60 absolute left-0 cursor-pointer z-40 duration-500"
+        ></div>
+        <div
+            (click)="bannerNext()"
+            class="h-full w-20 group-hover:bg-black/60 absolute right-0 cursor-pointer z-40 duration-500"
+        ></div>
+        <!--   Carousel Left-->
+        <div
+            class="opacity-0 group-hover:opacity-80 duration-500 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-black cursor-pointer group-hover:bg-white"
+        >
+            <div (click)="bannerPrevious()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path
+                        d="m13.707 4.707-1.414-1.414L3.586 12l8.707 8.707 1.414-1.414L6.414 12l7.293-7.293z"
+                    />
+                    <path
+                        d="m19.707 4.707-1.414-1.414L9.586 12l8.707 8.707 1.414-1.414L12.414 12l7.293-7.293z"
+                    />
+                </svg>
+            </div>
+        </div>
+        <!--   Carousel Right-->
+        <div
+            class="opacity-0 group-hover:opacity-80 duration-500 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer group-hover:bg-white"
+        >
+            <div (click)="bannerNext()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path
+                        d="m11.707 3.293-1.414 1.414L17.586 12l-7.293 7.293 1.414 1.414L20.414 12l-8.707-8.707z"
+                    />
+                    <path
+                        d="M5.707 3.293 4.293 4.707 11.586 12l-7.293 7.293 1.414 1.414L14.414 12 5.707 3.293z"
+                    />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <app-list-by-genre [genre]="'Adventure'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Drama'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Action'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Comedy'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Romance'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Horror'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'History'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'War'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'ScienceFiction'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Fantasy'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Documentary'"> </app-list-by-genre>
+</div>
