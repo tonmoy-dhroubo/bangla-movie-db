@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { DetailsComponent } from './details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListByGenreComponent } from './home/list-by-genre/list-by-genre.component';
+import { SearchItemComponent } from './search/search-item/search-item.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import { ListByGenreComponent } from './home/list-by-genre/list-by-genre.compone
         SearchComponent,
         DetailsComponent,
         ListByGenreComponent,
+        SearchItemComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],

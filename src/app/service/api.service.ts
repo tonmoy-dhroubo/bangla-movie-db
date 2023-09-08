@@ -83,4 +83,14 @@ export class ApiService {
             }&key=${environment.googleKey}`,
         );
     }
+
+    getCredits(id: string): Observable<any> {
+        return this.http.get(
+            this.base +
+                `movie/` +
+                id +
+                `/credits?api_key=` +
+                environment.theMovieDBKey,
+        );
+    }
 }

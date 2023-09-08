@@ -1,7 +1,7 @@
 <div>
     <!--Banner Carousel-->
     <div
-        class="max-w-[1500px] md:h-[600px] h-96 md:w-full mx-auto my-2 relative flex group"
+        class="max-w-7xl  xl:h-[600px] lg:h-[500px] md:h-[400px] h-[300px] w-full mx-auto my-2 relative flex group"
     >
         <div
             routerLink="/details/{{ bannerLinks[bannerIndex].id }}"
@@ -11,7 +11,7 @@
                     api.generateImg(bannerLinks[bannerIndex].backdrop_path) +
                     ')'
             }"
-            class="aspect-w-16 aspect-h-9 md:w-full w-[480px] h-full relative bg-center md:bg-cover duration-500 justify-center flex bg-no-repeat cursor-pointer"
+            class="aspect-w-16 aspect-h-9 w-full  h-full relative bg-center bg-contain duration-500 justify-center flex bg-no-repeat cursor-pointer"
         >
             <div
                 class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent"
@@ -25,15 +25,15 @@
 
         <div
             (click)="bannerPrevious()"
-            class="h-full w-20 group-hover:bg-black/60 absolute left-0 cursor-pointer z-40 duration-500"
+            class="h-full w-20 group-hover:bg-black/60 absolute left-0 cursor-pointer z-20 duration-500"
         ></div>
         <div
             (click)="bannerNext()"
-            class="h-full w-20 group-hover:bg-black/60 absolute right-0 cursor-pointer z-40 duration-500"
+            class="h-full w-20 group-hover:bg-black/60 absolute right-0 cursor-pointer z-20 duration-500"
         ></div>
         <!--   Carousel Left-->
         <div
-            class="opacity-0 group-hover:opacity-80 duration-500 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-black cursor-pointer group-hover:bg-white"
+            class="opacity-0 group-hover:opacity-80 duration-500 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 text-white cursor-pointer group-hover:bg-white"
         >
             <div (click)="bannerPrevious()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -48,7 +48,7 @@
         </div>
         <!--   Carousel Right-->
         <div
-            class="opacity-0 group-hover:opacity-80 duration-500 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer group-hover:bg-white"
+            class="opacity-0 group-hover:opacity-80 duration-500 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2  text-white cursor-pointer group-hover:bg-white"
         >
             <div (click)="bannerNext()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -65,13 +65,13 @@
 
     <app-list-by-genre [genre]="'Adventure'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'Drama'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'Fantasy'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'Action'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'Comedy'"> </app-list-by-genre>
+    <app-list-by-genre [genre]="'War'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'Romance'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'Horror'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'History'"> </app-list-by-genre>
-    <app-list-by-genre [genre]="'War'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'ScienceFiction'"> </app-list-by-genre>
-    <app-list-by-genre [genre]="'Fantasy'"> </app-list-by-genre>
     <app-list-by-genre [genre]="'Documentary'"> </app-list-by-genre>
 </div>

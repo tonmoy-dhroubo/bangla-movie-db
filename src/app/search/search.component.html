@@ -1,1 +1,9 @@
-<p>search works!</p>
+<!--<p class="text-white"> {{query}} </p>-->
+<!--<app-search-item movieID="bbb"></app-search-item>-->
+
+
+
+<div class=" max-w-7xl w-full h-full mx-auto  ">
+    <div *ngIf="searchResults.total_results === 0" class="text-white text-2xl text-center mt-10"> No result found for {{query}}</div>
+    <app-search-item *ngFor="let movie of searchResults.results" [id]="movie.id"></app-search-item>
+</div>
