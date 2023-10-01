@@ -1,0 +1,13 @@
+<!--<p class="text-white"> {{id}} </p>-->
+
+
+<div class="flex w-full h-full space-x-12  items-center p-16 cursor-pointer" (click)="goToDetails()">
+    <div class="w-1/4">
+        <img [src]="'https://image.tmdb.org/t/p/original/' + details.poster_path" fill alt="">
+    </div>
+    <div class="text-white w-3/4">
+        <div class="text-4xl font-bold"> {{details.title}} </div>
+        <div class=""> {{details.overview}} </div>
+    </div>
+
+</div>
