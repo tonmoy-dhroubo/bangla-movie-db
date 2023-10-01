@@ -1,5 +1,8 @@
 # BanglaMovieDb
 
+## [Live Preview](https://bangla-movie-db.netlify.app/)
+
+
 ## Screenshots: 
 ### Homapage
 ![Image 1](https://i.ibb.co/D4sBWDS/Screenshot-1.png) 
