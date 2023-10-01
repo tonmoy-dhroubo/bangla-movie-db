@@ -1,5 +1,22 @@
 # BanglaMovieDb
 
+## Screenshots: 
+### Homapage
+![Image 1](https://i.ibb.co/D4sBWDS/Screenshot-1.png) 
+
+### Genres
+![Image 2](https://i.ibb.co/Z8PLTP9/Screenshot-2.png) 
+
+### Movile Details
+![Image 4](https://i.ibb.co/vvHp1kZ/image.png)
+
+
+
+### Search Movies
+![Image 4](https://i.ibb.co/bQbFf8n/Screenshot-4.png)
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
 ## Development server
